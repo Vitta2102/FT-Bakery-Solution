@@ -17,4 +17,4 @@ public:
     virtual string getDescricao();
 };
 
-#endif#pragma once
+#endif

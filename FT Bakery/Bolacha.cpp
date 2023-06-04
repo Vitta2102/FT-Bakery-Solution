@@ -11,7 +11,7 @@
 
 using namespace std;
 
-Cracker::Cracker(string tipo, int unidades, double valor) : Comida(valor)
+Cracker::Cracker(string tipo, int unidades, double valor) : Food(valor)
    {
    this->tipo     = tipo;
    this->unidades = unidades;

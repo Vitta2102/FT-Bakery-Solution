@@ -6,7 +6,7 @@
 */
 
 #include <iostream>
-#include "a02ex00.hpp"
+#include "Decoracao.hpp"
 
 using namespace std;
 

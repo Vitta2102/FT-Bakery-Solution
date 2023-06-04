@@ -1,6 +1,6 @@
 #pragma once
-#ifndef A02EX03_H_H
-#define A02EX03_H_H
+#ifndef A02EX03_I_H
+#define A02EX03_I_H
 
 #include <string>
 #include "Comida.hpp"

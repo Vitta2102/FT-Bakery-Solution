@@ -18,7 +18,7 @@ FilledWaffer::FilledWaffer(string tipo, string recheio, int unidades, double val
    
 string FilledWaffer::getDescricao()
    { 
-   return ("Cracker Filled with " + recheio + " - " + Bolacha::getDescricao()); 
+   return ("Cracker Filled with " + recheio + " - " + Cracker::getDescricao()); 
    };
    
 /* fim de arquivo */

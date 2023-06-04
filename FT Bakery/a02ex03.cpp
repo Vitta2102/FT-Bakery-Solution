@@ -10,12 +10,12 @@
 #include <iostream>
 #include <iomanip> 
 
-#include "Decoração.hpp"
+#include "Decoracao.hpp"
 #include "a02ex01_a.hpp"
 #include "a02ex03.hpp"
 #include "Menu.hpp"
 #include "Comida.hpp"
-#include "Pão.hpp"
+#include "Pao.hpp"
 #include "Bolacha.hpp"
 #include "BolachaRecheada.hpp"
 #include "Cheese.h"
@@ -23,12 +23,13 @@
 #include "Ham.h"
 #include "Mortadella.h"
 
+
 /* DANGER: A LOT OF GLOBAL VARIABLES !!! (OBJECTS & STRUCTURES) */
 
 MyBooleanClass * verboseMode       = NULL;
 MyBooleanClass * shortMessageMode  = NULL;
 
-vector<Comida *> myMainList;
+vector<Food *> myMainList;
    
 int main(int argc, char* argv[])
    {
@@ -62,7 +63,7 @@ void clearAll()   // está errada ! corrigir !!!!
    {
    myMainList.clear();
 
-   vector<Comida *>::iterator scan = myMainList.begin();
+   vector<Food *>::iterator scan = myMainList.begin();
    
    while(scan != myMainList.end())
       {
@@ -82,7 +83,7 @@ void listItems()
    double total = 0.00;
       
    cout << "------------------------------\nItems in Database:\n------------------------------\n";
-   vector<Comida *>::iterator scan = myMainList.begin();
+   vector<Food *>::iterator scan = myMainList.begin();
    
    while(scan != myMainList.end())
       {
@@ -131,7 +132,7 @@ void insertBread()
    cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
    cin.clear();
    
-   bread = new Pao(type, weight,cost);
+   bread = new Bread(type, weight,cost);
    myMainList.insert(myMainList.end(), bread);
    
    cout << endl << bread->getDescricao() << " - US$ " << fixed << setprecision(2) << bread->getValor() << endl;   
@@ -139,7 +140,7 @@ void insertBread()
 
 void insertCheese() 
     {
-    Cheese* cheese;
+    Cheese * cheese;
     string buffer;
     string type;
     float  weight;
@@ -157,7 +158,25 @@ void insertCheese()
     cout << endl << cheese->getDescricao() << " - US$ " << fixed << setprecision(2) << cheese->getValor() << endl;
     };
 
-void insertCottageCheese() {};
+void insertCottageCheese() 
+    {
+    CottageCheese * cottageCheese;
+    string buffer;
+    string type;
+    float  weight;
+    double cost;
+
+    cout << "------------------------------\nInsert Cottage Cheese:\n------------------------------\n";
+    cout << "Type ......: "; getline(cin, buffer); type = buffer;
+    cout << "Weight ....: "; getline(cin, buffer); weight = stof(buffer);
+    cout << "Cost ......: "; getline(cin, buffer); cost = stod(buffer);
+    cin.clear();
+
+    cottageCheese = new CottageCheese(type, weight, cost);
+    myMainList.insert(myMainList.end(), cottageCheese);
+
+    cout << endl << cottageCheese->getDescricao() << " - US$ " << fixed << setprecision(2) << cottageCheese->getValor() << endl;
+    };
    
 void insertCracker()
    {
@@ -195,15 +214,51 @@ void insertFilledWafer()
    cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
    cin.clear();
    
-   filledWafer = new BolachaRecheada(type, filling, amount,cost);
+   filledWafer = new FilledWaffer(type, filling, amount,cost);
    myMainList.insert(myMainList.end(), filledWafer);
    
    cout << endl << filledWafer->getDescricao() << " - US$ " << fixed << setprecision(2) << filledWafer->getValor() << endl;   
    };
 
-void insertHam() {};
+void insertHam() 
+    {
+    Ham * ham;
+    string buffer;
+    string type;
+    float  weight;
+    double cost;
 
-void insertMortadella() {};
+    cout << "------------------------------\nInsert Ham:\n------------------------------\n";
+    cout << "Type ......: "; getline(cin, buffer); type = buffer;
+    cout << "Weight ....: "; getline(cin, buffer); weight = stof(buffer);
+    cout << "Cost ......: "; getline(cin, buffer); cost = stod(buffer);
+    cin.clear();
+
+    ham = new Ham(type, weight, cost);
+    myMainList.insert(myMainList.end(), ham);
+
+    cout << endl << ham->getDescricao() << " - US$ " << fixed << setprecision(2) << ham->getValor() << endl;
+    };
+
+void insertMortadella() 
+    {
+    Mortadella * mortadella;
+    string buffer;
+    string type;
+    int    amount;
+    double cost;
+
+    cout << "------------------------------\nInsert Mortadella:\n------------------------------\n";
+    cout << "Type ......: "; getline(cin, type);
+    cout << "Amount ....: "; getline(cin, buffer); amount = stoi(buffer);
+    cout << "Cost ......: "; getline(cin, buffer); cost = stod(buffer);
+    cin.clear();
+
+    mortadella = new Mortadella(type, amount, cost);
+    myMainList.insert(myMainList.end(), mortadella);
+
+    cout << endl << mortadella->getDescricao() << " - US$ " << fixed << setprecision(2) << mortadella->getValor() << endl;
+    };
   
 void verifyArguments(int argc, char* argv[])
    {
