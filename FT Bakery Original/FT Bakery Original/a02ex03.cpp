@@ -10,18 +10,14 @@
 #include <iostream>
 #include <iomanip> 
 
-#include "Decoração.hpp"
+#include "a02ex00.hpp"
 #include "a02ex01_a.hpp"
 #include "a02ex03.hpp"
-#include "Menu.hpp"
-#include "Comida.hpp"
-#include "Pão.hpp"
-#include "Bolacha.hpp"
-#include "BolachaRecheada.hpp"
-#include "Cheese.h"
-#include "CottageCheese.h"
-#include "Ham.h"
-#include "Mortadella.h"
+#include "a02ex03_a.hpp"
+#include "a02ex03_b.hpp"
+#include "a02ex03_c.hpp"
+#include "a02ex03_d.hpp"
+#include "a02ex03_e.hpp"
 
 /* DANGER: A LOT OF GLOBAL VARIABLES !!! (OBJECTS & STRUCTURES) */
 
@@ -106,20 +102,20 @@ void insertItems()
  
       switch(escolha)
          {
- 	 case 1: { insertBread();        }; break;
-     case 2: { insertCheese();       }; break;
-     case 3: { insertCottageCheese();}; break;
- 	 case 4: { insertCracker();      }; break;
- 	 case 5: { insertFilledWafer();  }; break;
-     case 6: { insertHam();          }; break;
-     case 7: { insertMortadella();   }; break;
+ 	 case 1: { insertBread();       }; break;
+ 	 case 2: {                      }; break;
+ 	 case 3: {                      }; break;
+ 	 case 4: { insertCracker();     }; break;
+ 	 case 5: { insertFilledWafer(); }; break;
+ 	 case 6: {                      }; break;
+ 	 case 7: {                      }; break;
          };
       };
    };
 
 void insertBread()
    {
-   Bread * bread;
+   Pao * bread;
    string buffer;
    string type;
    float  weight;
@@ -136,32 +132,10 @@ void insertBread()
    
    cout << endl << bread->getDescricao() << " - US$ " << fixed << setprecision(2) << bread->getValor() << endl;   
    };
-
-void insertCheese() 
-    {
-    Cheese* cheese;
-    string buffer;
-    string type;
-    float  weight;
-    double cost;
-
-    cout << "------------------------------\nInsert Cheese:\n------------------------------\n";
-    cout << "Type ......: "; getline(cin, buffer); type = buffer;
-    cout << "Weight ....: "; getline(cin, buffer); weight = stof(buffer);
-    cout << "Cost ......: "; getline(cin, buffer); cost = stod(buffer);
-    cin.clear();
-
-    cheese = new Cheese(type, weight, cost);
-    myMainList.insert(myMainList.end(), cheese);
-
-    cout << endl << cheese->getDescricao() << " - US$ " << fixed << setprecision(2) << cheese->getValor() << endl;
-    };
-
-void insertCottageCheese() {};
    
 void insertCracker()
    {
-   Cracker * cracker;
+   Bolacha * cracker;
    string buffer;
    string type;
    int    amount;
@@ -173,7 +147,7 @@ void insertCracker()
    cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
    cin.clear();
    
-   cracker = new Cracker(type, amount,cost);
+   cracker = new Bolacha(type, amount,cost);
    myMainList.insert(myMainList.end(), cracker);
    
    cout << endl << cracker->getDescricao() << " - US$ " << fixed << setprecision(2) << cracker->getValor() << endl;   
@@ -181,7 +155,7 @@ void insertCracker()
 
 void insertFilledWafer()
    {
-   FilledWaffer * filledWafer;
+   BolachaRecheada * filledWafer;
    string buffer;
    string type;
    string filling;
@@ -200,10 +174,6 @@ void insertFilledWafer()
    
    cout << endl << filledWafer->getDescricao() << " - US$ " << fixed << setprecision(2) << filledWafer->getValor() << endl;   
    };
-
-void insertHam() {};
-
-void insertMortadella() {};
   
 void verifyArguments(int argc, char* argv[])
    {
