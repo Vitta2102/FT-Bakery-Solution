@@ -68,7 +68,7 @@ void clearAll()   // está errada ! corrigir !!!!
    while(scan != myMainList.end())
       {
       delete (*scan);
-      *scan - NULL;
+      *scan = NULL;
       scan++;
       };
 
