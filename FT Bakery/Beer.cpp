@@ -1,16 +1,16 @@
 #include <string>
-#include "Cerveja.hpp"
+#include "Beer.hpp"
 
 using namespace std;
 
-Cerveja::Cerveja(string tipo, int ml, string recipiente, double valor) : Liquido(ml, recipiente)
+Beer::Beer(string tipo, int ml, string recipiente, double valor) : Liquid(ml, recipiente)
 {
     this->tipo = tipo;
     this->ml = ml;
     this->recipiente = recipiente;
     this->valor = valor;
 }
-string Cerveja::getDescricao()
+string Beer::getDescricao()
 {
     return("Cerveja "+tipo+" - "+ recipiente +to_string(ml)+" Ml.");
 };

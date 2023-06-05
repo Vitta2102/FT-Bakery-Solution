@@ -3,13 +3,13 @@
 
 using namespace std;
 
-class Liquido : public Food
+class Liquid : public Food
 {
     protected:
     int ml;
     string recipiente;
 
     public:
-    Liquido(int ml, string recipiente);
+    Liquid(int ml, string recipiente);
     virtual string getDescricao() = 0;
 };
