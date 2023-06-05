@@ -65,7 +65,7 @@ void clearAll()   // está errada ! corrigir !!!!
       delete (*scan);
       *scan - NULL;
       scan++;
-      };
+      }
 
    delete verboseMode;
    delete shortMessageMode;
