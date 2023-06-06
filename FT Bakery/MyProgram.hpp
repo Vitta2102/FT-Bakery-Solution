@@ -5,6 +5,10 @@
    Mar/2016
 */
 
+#include <vector>
+#include "Comida.hpp"
+#include "a02ex01_a.hpp"
+
 using namespace std;
 
 #ifndef A02EX03_H
@@ -12,7 +16,7 @@ using namespace std;
 
 class MyProgram 
 	{
-	private:
+	protected:
 
 		std::vector<Food*> myMainList;
 		MyBooleanClass* verboseMode;
@@ -37,12 +41,12 @@ class MyProgram
 		MyProgram();
 		~MyProgram();
 
-		void start();
+		void start(int argc, char* argv[]);
 
-		void setVerboseMode(bool value);
-		void setShortMessageMode(bool value);
-		bool getVerboseMode();
-		bool getShortMessageMode();
+		void setVerboseMode(MyBooleanClass* value) { verboseMode = value; }
+		MyBooleanClass* getVerboseMode() const { return verboseMode; }
+		void setShortMessageMode(MyBooleanClass* value) { shortMessageMode = value; }
+		MyBooleanClass* getShortMessageMode() const { return shortMessageMode; }
 		
    
 };

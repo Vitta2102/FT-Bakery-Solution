@@ -5,7 +5,15 @@
 #include "MyProgram.hpp"
 #include "Comida.hpp"
 #include "Menu.hpp"
+#include "Decoracao.hpp"
 #include "a02ex01_a.hpp" 
+#include "Pao.hpp"
+#include "Cheese.h"
+#include "CottageCheese.h"
+#include "Ham.h"
+#include "Mortadella.h"
+#include "BolachaRecheada.hpp"
+#include "Bolacha.hpp"
 
 using namespace std;
 
@@ -17,12 +25,22 @@ MyProgram::~MyProgram() {
     delete shortMessageMode;
 }
 
-void MyProgram::process() {
+void MyProgram::start(int argc, char* argv[])
+{
+    myMainList.clear();
+    Information::wellcome("C++ Program " + string(argv[0]) + " running!", shortMessageMode->getStatus());
+    process();
+    Information::bye(shortMessageMode->getStatus());
+    clearAll();
+}
+
+void MyProgram::process() 
+{
     std::vector<std::string> opcoes({ "Exit", "List Database", "Insert Items" });
     Menu menu("Main Menu", opcoes);
     int escolha = -1;
 
-    while (escolha) {
+    while (escolha != 0) {
         escolha = menu.getEscolha();
 
         switch (escolha) {
@@ -39,11 +57,12 @@ void MyProgram::process() {
 }
 
 void MyProgram::clearAll() {
+
     myMainList.clear();
 
     std::vector<Food*>::iterator scan = myMainList.begin();
 
-    while (scan != myMainList.end()) {
+    while(scan != myMainList.end()) {
         delete (*scan);
         *scan = NULL;
         scan++;
@@ -211,9 +230,10 @@ void MyProgram::insertCracker() {
 }
 
 void MyProgram::insertFilledWafer() {
-    FilledWafer* filledWafer;
+    FilledWaffer * filledWaffer;
     std::string buffer;
     std::string type;
+    string filling;
     int amount;
     double cost;
 
@@ -221,6 +241,8 @@ void MyProgram::insertFilledWafer() {
     std::cout << "Type ......: ";
     std::getline(std::cin, buffer);
     type = buffer;
+    std::cout << "Filling ...: ";
+    std::getline(cin, filling);
     std::cout << "Amount ....: ";
     std::getline(std::cin, buffer);
     amount = std::stoi(buffer);
@@ -229,11 +251,11 @@ void MyProgram::insertFilledWafer() {
     cost = std::stod(buffer);
     std::cin.clear();
 
-    filledWafer = new FilledWafer(type, amount, cost);
-    myMainList.insert(myMainList.end(), filledWafer);
+    filledWaffer = new FilledWaffer(type, filling, amount, cost);
+    myMainList.insert(myMainList.end(), filledWaffer);
 
     std::cout << std::endl
-        << filledWafer->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << filledWafer->getValor() << std::endl;
+        << filledWaffer->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << filledWaffer->getValor() << std::endl;
 }
 
 void MyProgram::insertHam() {
@@ -288,52 +310,20 @@ void MyProgram::insertMortadella() {
         << mortadella->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << mortadella->getValor() << std::endl;
 }
 
-void MyProgram::verifyArguments(int argc, char* argv[]) {
-    int i = 0;
-
-    for (i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-v") == 0) {
-            if (verboseMode == nullptr) {
-                verboseMode = new MyBooleanClass();
-            }
-            verboseMode->setValue(true);
-        }
-
-        if (strcmp(argv[i], "-s") == 0) {
-            if (shortMessageMode == nullptr) {
-                shortMessageMode = new MyBooleanClass();
-            }
-            shortMessageMode->setValue(true);
-        }
-    }
-}
-
-// Implementação dos métodos get/set para verboseMode e shortMessageMode
-
-void MyProgram::setVerboseMode(bool value) {
-    if (verboseMode == nullptr) {
-        verboseMode = new MyBooleanClass();
-    }
-    verboseMode->setValue(value);
-}
-
-void MyProgram::setShortMessageMode(bool value) {
-    if (shortMessageMode == nullptr) {
-        shortMessageMode = new MyBooleanClass();
-    }
-    shortMessageMode->setValue(value);
-}
-
-bool MyProgram::getVerboseMode() {
-    if (verboseMode == nullptr) {
-        return false;
-    }
-    return verboseMode->getValue();
-}
-
-bool MyProgram::getShortMessageMode() {
-    if (shortMessageMode == nullptr) {
-        return false;
-    }
-    return shortMessageMode->getValue();
-}
+//void MyProgram::verifyArguments(int argc, char* argv[])
+//{
+//    if (verboseMode) { delete verboseMode; };
+//    if (shortMessageMode) { delete shortMessageMode; };
+//
+//    verboseMode = NULL;
+//    shortMessageMode = NULL;
+//
+//    for (int count = 1; count < argc; count++)
+//    {
+//        if (string(argv[count]) == "-v") { verboseMode = new MyBooleanClass(true); };
+//        if (string(argv[count]) == "-s") { shortMessageMode = new MyBooleanClass(true); };
+//    };
+//
+//    if (!verboseMode) { verboseMode = new MyBooleanClass(); };  // default is false
+//    if (!shortMessageMode) { shortMessageMode = new MyBooleanClass(); };  // default is false
+//}
