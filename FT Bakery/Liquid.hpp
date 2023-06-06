@@ -6,10 +6,9 @@ using namespace std;
 class Liquid : public Food
 {
     protected:
-    int ml;
+    float ml;
     string recipiente;
 
     public:
-    Liquid(int ml, string recipiente);
-    virtual string getDescricao() = 0;
+    Liquid(float ml, string recipiente);
 };

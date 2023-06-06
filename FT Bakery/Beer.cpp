@@ -1,16 +1,14 @@
 #include <string>
 #include "Beer.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
-Beer::Beer(string tipo, int ml, string recipiente, double valor) : Liquid(ml, recipiente)
+Beer::Beer(int unidades, float ml, string recipiente, double valor) : Liquid(ml, recipiente)
 {
-    this->tipo = tipo;
-    this->ml = ml;
-    this->recipiente = recipiente;
-    this->valor = valor;
+    this->unidades = unidades;
 }
-string Beer::getDescricao()
+int Beer::getUnidades()
 {
-    return("Cerveja "+tipo+" - "+ recipiente +to_string(ml)+" Ml.");
+    return (unidades);
 };

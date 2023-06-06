@@ -7,9 +7,9 @@ using namespace std;
 class Beer : public Liquid 
 {
     protected: 
-    string tipo;
+    int unidades;
 
     public:
-    Beer(string tipo, int ml, string recipiente, double valor);
-    virtual string getDescricao();
+    Beer(int unidade, float ml, string recipiente, double valor);
+    virtual int getUnidades();
 };

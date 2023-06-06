@@ -4,12 +4,12 @@
 
 using namespace std;
 
-class Budweiser : public Beer
-{
+class Skol : public Beer
+{   
     protected:
     float teorAlcoolico;
 
     public:
-    Budweiser(float teorAlcoolico, int unidades, float ml, string recipiente, double valor);
+    Skol(float teorAlcoolico, int unidades, float ml, string recipiente, double valor);
     virtual string getDescricao();
 };
