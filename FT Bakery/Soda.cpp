@@ -1,17 +1,15 @@
 #include <string>
 #include "Soda.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
-Soda::Soda(std::string tipo, int ml, std::string recipiente, double valor) : Liquido(ml, recipiente)
+Soda::Soda(string tipo, int ml, string recipiente, double valor) : Liquid(ml, recipiente, valor)
 {
     this->tipo = tipo;
-    this->ml = ml;
-    this->recipiente = recipiente;
-    this->valor = valor;
 }
 
 std::string Soda::getDescricao()
 {
-    return "Soda " + tipo + " - " + recipiente + std::to_string(ml) + " Ml.";
+    return "Soda " + tipo + " - " + recipiente + " " + to_string(ml) + " Ml.";
 }

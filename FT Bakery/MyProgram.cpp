@@ -3,17 +3,22 @@
 #include <iostream>
 #include <iomanip> 
 #include "MyProgram.hpp"
-#include "Comida.hpp"
+#include "Food.hpp"
 #include "Menu.hpp"
 #include "Decoracao.hpp"
 #include "a02ex01_a.hpp" 
-#include "Pao.hpp"
+#include "Bread.hpp"
 #include "Cheese.h"
 #include "CottageCheese.h"
 #include "Ham.h"
 #include "Mortadella.h"
-#include "BolachaRecheada.hpp"
-#include "Bolacha.hpp"
+#include "Cracker.hpp"
+#include "FilledWaffer.hpp"
+#include "Water.hpp"
+#include "Milk.hpp"
+#include "Soda.hpp"
+#include "Beer.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
@@ -86,7 +91,7 @@ void MyProgram::listItems() {
 void MyProgram::insertItems() {
     std::cout << "------------------------------\nInset New Items:\n------------------------------\n";
 
-    Menu menu("Insert Items", { "Exit", "Bread", "Cheese", "Cottage Cheese", "Cracker", "Filled Wafer", "Ham", "Mortadella" });
+    Menu menu("Insert Items", { "Exit", "Bread", "Cheese", "Cottage Cheese", "Cracker", "Filled Wafer", "Ham", "Mortadella", "Water", "Milk", "Soda", "Beer"});
     int escolha = -1;
 
     while (escolha) {
@@ -110,7 +115,7 @@ void MyProgram::insertItems() {
             break;
         }
         case 5: {
-            insertFilledWafer();
+            insertFilledWaffer();
             break;
         }
         case 6: {
@@ -119,6 +124,22 @@ void MyProgram::insertItems() {
         }
         case 7: {
             insertMortadella();
+            break;
+        }
+        case 8: {
+            insertWater();
+            break;
+        }
+        case 9: {
+            insertMilk();
+            break;
+        }
+        case 10: {
+            insertSoda();
+            break;
+        }
+        case 11: {
+            insertBeer();
             break;
         }
         }
@@ -229,7 +250,7 @@ void MyProgram::insertCracker() {
         << cracker->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << cracker->getValor() << std::endl;
 }
 
-void MyProgram::insertFilledWafer() {
+void MyProgram::insertFilledWaffer() {
     FilledWaffer * filledWaffer;
     std::string buffer;
     std::string type;
@@ -308,6 +329,126 @@ void MyProgram::insertMortadella() {
 
     std::cout << std::endl
         << mortadella->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << mortadella->getValor() << std::endl;
+}
+
+void MyProgram::insertWater() {
+    Water* water;
+    std::string buffer;
+    std::string type;
+    string container;
+    float ml;
+    double cost;
+
+    std::cout << "------------------------------\nInsert Water:\n------------------------------\n";
+    std::cout << "mL ......: ";
+    std::getline(std::cin, buffer);
+    ml = std::stod(buffer);
+    std::cout << "Type ......: ";
+    std::getline(std::cin, buffer);
+    type = buffer;
+    std::cout << "Container ....: ";
+    std::getline(std::cin, buffer);
+    container = buffer;
+    std::cout << "Cost ......: ";
+    std::getline(std::cin, buffer);
+    cost = std::stod(buffer);
+    std::cin.clear();
+
+    water = new Water(type, ml, container, cost);
+    myMainList.insert(myMainList.end(), water);
+
+    std::cout << std::endl
+        << water->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << water->getValor() << std::endl;
+}
+
+void MyProgram::insertMilk() {
+    Milk* milk;
+    std::string buffer;
+    std::string type;
+    string container;
+    float ml;
+    double cost;
+
+    std::cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+    std::cout << "mL ......: ";
+    std::getline(std::cin, buffer);
+    ml = std::stod(buffer);
+    std::cout << "Type ......: ";
+    std::getline(std::cin, buffer);
+    type = buffer;
+    std::cout << "Container ....: ";
+    std::getline(std::cin, buffer);
+    container = buffer;
+    std::cout << "Cost ......: ";
+    std::getline(std::cin, buffer);
+    cost = std::stod(buffer);
+    std::cin.clear();
+
+    milk = new Milk(type, ml, container, cost);
+    myMainList.insert(myMainList.end(), milk);
+
+    std::cout << std::endl
+        << milk->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << milk->getValor() << std::endl;
+}
+
+void MyProgram::insertSoda() {
+    Soda* soda;
+    std::string buffer;
+    std::string type;
+    string container;
+    float ml;
+    double cost;
+
+    std::cout << "------------------------------\nInsert Soda:\n------------------------------\n";
+    std::cout << "mL ......: ";
+    std::getline(std::cin, buffer);
+    ml = std::stod(buffer);
+    std::cout << "Type ......: ";
+    std::getline(std::cin, buffer);
+    type = buffer;
+    std::cout << "Container ....: ";
+    std::getline(std::cin, buffer);
+    container = buffer;
+    std::cout << "Cost ......: ";
+    std::getline(std::cin, buffer);
+    cost = std::stod(buffer);
+    std::cin.clear();
+
+    soda = new Soda(type, ml, container, cost);
+    myMainList.insert(myMainList.end(), soda);
+
+    std::cout << std::endl
+        << soda->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << soda->getValor() << std::endl;
+}
+
+void MyProgram::insertBeer() {
+    Beer* beer;
+    std::string buffer;
+    std::string type;
+    string container;
+    float ml;
+    double cost;
+
+    std::cout << "------------------------------\nInsert Beer:\n------------------------------\n";
+    std::cout << "mL ......: ";
+    std::getline(std::cin, buffer);
+    ml = std::stod(buffer);
+    std::cout << "Type ......: ";
+    std::getline(std::cin, buffer);
+    type = buffer;
+    std::cout << "Container ....: ";
+    std::getline(std::cin, buffer);
+    container = buffer;
+    std::cout << "Cost ......: ";
+    std::getline(std::cin, buffer);
+    cost = std::stod(buffer);
+    std::cin.clear();
+
+    beer = new Beer(type, ml, container, cost);
+    myMainList.insert(myMainList.end(), beer);
+
+    std::cout << std::endl
+        << beer->getDescricao() << " - US$ " << std::fixed << std::setprecision(2) << beer->getValor() << std::endl;
 }
 
 //void MyProgram::verifyArguments(int argc, char* argv[])

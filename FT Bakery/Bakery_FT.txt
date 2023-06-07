@@ -28,7 +28,7 @@ a02ex03.hpp
 
 5. Liste a base de dados inicialmente vazia e veja o resultado de tela.
 
-6. Insir em qualquer ordem vários ítens: pães (bread), bolachas (cracker) e bolachas recheadas (filled wafer).
+6. Insir em qualquer ordem vários ítens: pães (bread), Crackers (cracker) e Crackers recheadas (filled wafer).
 
 7. Liste a base de dados e veja o resultado de tela.
 
@@ -36,7 +36,7 @@ a02ex03.hpp
 
 9. Veja que os itens 2, 3, 6 e 7 do menu de inserção não funcionam porque não há código para eles. Mas eles não geram erros, apenas não permitem entrada de dados. Procure no código onde as chamadas de função deveriam estar.
 
-10. Examine os códigos (hpp e cpp) das classes "Comida", "Bolacha", "Bolacha Recheada" e "Pão". Para coerência com o programa, altere seus nomes, respectivamente para "Food", "Cracker", "Filled Wafer" e "Bread". Altere todo o código que for necessário para isto.
+10. Examine os códigos (hpp e cpp) das classes "Food", "Cracker", "Cracker Recheada" e "Pão". Para coerência com o programa, altere seus nomes, respectivamente para "Food", "Cracker", "Filled Wafer" e "Bread". Altere todo o código que for necessário para isto.
 
 11. Use as classes "Food", "Bread", "Cracker", "Filled Wafer" como base conceitual e crie as classes "Cheese", "Cottage Cheese", "Ham" e "Mortadella". "Cottage Cheese" deriva-se de "Cheese"; todas as demais, de "Food".
 

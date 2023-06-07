@@ -1,17 +1,17 @@
 #include <string>
+#include "Liquid.hpp"
 #include "Water.hpp"
 
 using namespace std;
 
-Water::Water(std::string tipo, int ml, std::string recipiente, double valor) : Liquido(ml, recipiente)
+
+
+Water::Water(string tipo, float ml, string recipiente, double valor) : Liquid(ml, recipiente, valor)
 {
     this->tipo = tipo;
-    this->ml = ml;
-    this->recipiente = recipiente;
-    this->valor = valor;
 }
 
-std::string Water::getDescricao()
+string Water::getDescricao()
 {
-    return "Water " + tipo + " - " + recipiente + std::to_string(ml) + " Ml.";
-}
+    return "Water " + tipo + " - " + recipiente + " " + to_string(ml) + " Ml.";
+};

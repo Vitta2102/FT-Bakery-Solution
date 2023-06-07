@@ -6,8 +6,8 @@
 */
 
 #include <string>
-#include "Comida.hpp"
-#include "Pao.hpp"
+#include "Food.hpp"
+#include "Bread.hpp"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ Bread::Bread(string tipo, float peso, double valor) : Food(valor)
    
 string Bread::getDescricao()
    { 
-   return ("Pao " + tipo + " - " + to_string(peso) + " Kg."); 
+   return ("Bread " + tipo + " - " + to_string(peso) + " Kg."); 
    };
    
 /* fim de arquivo */

@@ -6,8 +6,8 @@
 */
 
 #include <string>
-#include "Bolacha.hpp"
-#include "BolachaRecheada.hpp"
+#include "Cracker.hpp"
+#include "FilledWaffer.hpp"
 
 using namespace std;
 
@@ -18,7 +18,7 @@ FilledWaffer::FilledWaffer(string tipo, string recheio, int unidades, double val
    
 string FilledWaffer::getDescricao()
    { 
-   return ("Cracker Filled with " + recheio + " - " + Cracker::getDescricao()); 
+   return ("Waffer Filled with " + recheio + " - " + Cracker::getDescricao()); 
    };
    
 /* fim de arquivo */

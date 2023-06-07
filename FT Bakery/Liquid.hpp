@@ -1,5 +1,9 @@
+#pragma once
+#ifndef LIQUID_H
+#define LIQUID_H
+
 #include <string>
-#include "Comida.hpp"
+#include "Food.hpp"
 
 using namespace std;
 
@@ -10,5 +14,7 @@ class Liquid : public Food
     string recipiente;
 
     public:
-    Liquid(float ml, string recipiente);
+    Liquid(float, string, double);
 };
+
+#endif

@@ -6,7 +6,8 @@
 */
 
 #include <vector>
-#include "Comida.hpp"
+#include "Food.hpp"
+#include "Liquid.hpp"
 #include "a02ex01_a.hpp"
 
 using namespace std;
@@ -34,7 +35,12 @@ class MyProgram
 	   void insertHam(void);
 	   void insertMortadella(void);
 	   void insertCracker(void);
-	   void insertFilledWafer(void);
+	   void insertFilledWaffer(void);
+	   void insertMilk(void);
+	   void insertWater(void);
+	   void insertSoda(void);
+	   void insertBeer(void);
+
 
 	public:
 

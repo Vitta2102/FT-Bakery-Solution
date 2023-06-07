@@ -2,18 +2,19 @@
 #define SODA_HPP
 
 #include <string>
-#include "Liquido.hpp"
+#include "Food.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
-class Soda : public Liquido 
+class Soda : public Liquid 
 {
     private:
-    std::string tipo;
+    string tipo;
 
     public:
-    Soda(std::string tipo, int ml, std::string recipiente, double valor);
-    std::string getDescricao();
+    Soda(string, int, string, double);
+    virtual string getDescricao();
 };
 
 #endif

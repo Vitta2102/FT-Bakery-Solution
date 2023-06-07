@@ -2,18 +2,19 @@
 #define MILK_HPP
 
 #include <string>
-#include "Liquido.hpp"
+#include "Food.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
-class Milk : public Liquido 
+class Milk : public Liquid 
 {
     private:
-    std::string tipo;
+    string tipo;
 
     public:
-    Milk(std::string tipo, int ml, std::string recipiente, double valor);
-    std::string getDescricao();
+    Milk(string, int, string, double);
+    virtual string getDescricao();
 };
 
 #endif

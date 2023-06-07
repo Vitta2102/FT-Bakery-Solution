@@ -6,7 +6,7 @@
 */
 
 #include <string>
-#include "Comida.hpp"
+#include "Food.hpp"
 
 using namespace std;
 

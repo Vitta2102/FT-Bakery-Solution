@@ -6,8 +6,8 @@
 */
 
 #include <string>
-#include "Comida.hpp"
-#include "Bolacha.hpp"
+#include "Food.hpp"
+#include "Cracker.hpp"
 
 using namespace std;
 

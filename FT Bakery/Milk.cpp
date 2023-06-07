@@ -1,17 +1,15 @@
 #include <string>
 #include "Milk.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
-Milk::Milk(std::string tipo, int ml, std::string recipiente, double valor) : Liquido(ml, recipiente)
+Milk::Milk(std::string tipo, int ml, std::string recipiente, double valor) : Liquid(ml, recipiente, valor)
 {
     this->tipo = tipo;
-    this->ml = ml;
-    this->recipiente = recipiente;
-    this->valor = valor;
 }
 
-std::string Milk::getDescricao()
+string Milk::getDescricao()
 {
-    return "Milk " + tipo + " - " + recipiente + std::to_string(ml) + " Ml.";
+    return "Milk " + tipo + " - " + recipiente + " " + to_string(ml) + " Ml.";
 }

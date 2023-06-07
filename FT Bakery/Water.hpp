@@ -2,18 +2,19 @@
 #define WATER_HPP
 
 #include <string>
-#include "Liquido.hpp"
+#include "Food.hpp"
+#include "Liquid.hpp"
 
 using namespace std;
 
-class Water : public Liquido 
+class Water : public Liquid 
 {
-    private:
+private:
     std::string tipo;
 
-    public:
-    Water(std::string tipo, int ml, std::string recipiente, double valor);
-    std::string getDescricao();
+public:
+    Water(string, float, string, double);
+    virtual string getDescricao();
 };
 
 #endif

@@ -4,11 +4,12 @@
 
 using namespace std;
 
-Beer::Beer(int unidades, float ml, string recipiente, double valor) : Liquid(ml, recipiente)
+Beer::Beer(std::string tipo, int ml, std::string recipiente, double valor) : Liquid(ml, recipiente, valor)
 {
-    this->unidades = unidades;
+    this->tipo = tipo;
+
 }
-int Beer::getUnidades()
+std::string Beer::getDescricao()
 {
-    return (unidades);
-};
+    return "Beer " + tipo + " - " + recipiente + " " + to_string(ml) + " Ml.";
+}

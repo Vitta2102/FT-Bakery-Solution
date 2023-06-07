@@ -1,9 +1,9 @@
 #pragma once
-#ifndef A02EX03_H_H
-#define A02EX03_H_H
+#ifndef HAM_H
+#define HAM_H
 
 #include <string>
-#include "Comida.hpp"
+#include "Food.hpp"
 
 using namespace std;
 

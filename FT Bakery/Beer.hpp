@@ -1,5 +1,10 @@
+#pragma once
+#ifndef BEER_H
+#define BEER_H
+
+
 #include <string>
-#include "Comida.hpp"
+#include "Food.hpp"
 #include "Liquid.hpp"
 
 using namespace std;
@@ -7,9 +12,11 @@ using namespace std;
 class Beer : public Liquid 
 {
     protected: 
-    int unidades;
+    string tipo;
 
     public:
-    Beer(int unidade, float ml, string recipiente, double valor);
-    virtual int getUnidades();
+    Beer(string, int, string, double);
+    virtual string getDescricao();
 };
+
+#endif
