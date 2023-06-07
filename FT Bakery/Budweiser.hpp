@@ -10,6 +10,6 @@ class Budweiser : public Beer
     float teorAlcoolico;
 
     public:
-    Budweiser(float teorAlcoolico, int unidades, float ml, string recipiente, double valor);
+    Budweiser(float, float, string, double);
     virtual string getDescricao();
 };

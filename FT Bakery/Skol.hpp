@@ -10,6 +10,6 @@ class Skol : public Beer
     float teorAlcoolico;
 
     public:
-    Skol(float teorAlcoolico, int unidades, float ml, string recipiente, double valor);
+    Skol(float, float, string, double);
     virtual string getDescricao();
 };
