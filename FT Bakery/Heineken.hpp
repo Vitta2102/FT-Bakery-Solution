@@ -10,6 +10,6 @@ class Heineken : public Beer
     float teorAlcoolico;
 
     public:
-    Heineken(float teorAlcoolico, int unidades, float ml, string recipiente, double valor);
+    Heineken(float, float, string, double);
     virtual string getDescricao();    
 };

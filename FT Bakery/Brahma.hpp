@@ -10,6 +10,6 @@ class Brahma : public Beer
     float teorAlcoolico;
 
     public:
-    Brahma(float teorAlcoolico, int unidades, float ml, string recipiente, double valor);
+    Brahma(float, float, string, double);
     virtual string getDescricao();
 };

@@ -39,7 +39,10 @@ class MyProgram
 	   void insertMilk(void);
 	   void insertWater(void);
 	   void insertSoda(void);
-	   void insertBeer(void);
+	   void insertSkol(void);
+	   void insertHeineken(void);
+	   void insertBudweiser(void);
+	   void insertBrahma(void);
 
 
 	public:

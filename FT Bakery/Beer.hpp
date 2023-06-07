@@ -15,7 +15,7 @@ class Beer : public Liquid
     string tipo;
 
     public:
-    Beer(string, int, string, double);
+    Beer(float, string, double);
     virtual string getDescricao();
 };
 
